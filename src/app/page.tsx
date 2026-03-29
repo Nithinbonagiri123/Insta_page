@@ -20,6 +20,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import StickyCTA from "@/components/StickyCTA";
 import ContentDays from "@/components/ContentDays";
 import InstagramTemplates from "@/components/InstagramTemplates";
+import HeroBackground from "@/components/HeroBackground";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -65,12 +66,8 @@ export default function Home() {
 
       {/* ───────── HERO ───────── */}
       <section className="relative min-h-screen flex items-center justify-center px-5">
-        {/* Video Background Placeholder */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-[#09090b] to-[#09090b]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.15),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMC41IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9zdmc+')] opacity-50" />
-        </div>
+        {/* 3D Motion Background */}
+        <HeroBackground />
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           <motion.div
@@ -82,7 +79,7 @@ export default function Home() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-zinc-400"
+              className="inline-flex items-center gap-2 glass-premium rounded-full px-4 py-2 text-sm text-zinc-400"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />

@@ -12,7 +12,7 @@ body {
   background: var(--background);
 }
 
-/* Custom scrollbar */
+/* ─── Custom scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -24,7 +24,7 @@ body {
   border-radius: 3px;
 }
 
-/* Glassmorphism utility */
+/* ─── Glassmorphism utilities ─── */
 .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px);
@@ -39,7 +39,27 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Gradient text */
+/* Premium glassmorphism — for hero content cards floating over 3D background */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(40px) saturate(1.8);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-premium:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(168, 85, 247, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(168, 85, 247, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Gradient text ─── */
 .text-gradient {
   background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e879f9 100%);
   -webkit-background-clip: text;
@@ -47,7 +67,7 @@ body {
   background-clip: text;
 }
 
-/* Glow effect */
+/* ─── Glow effects ─── */
 .glow-purple {
   box-shadow: 0 0 40px rgba(168, 85, 247, 0.3), 0 0 80px rgba(168, 85, 247, 0.1);
 }
@@ -66,6 +86,177 @@ body {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+/* ─── 3D Bokeh Orbs — pearlescent floating spheres with shallow DOF ─── */
+.bokeh-field {
+  filter: blur(0px);
+}
+
+.bokeh-orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}
+
+.bokeh-orb-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(200, 180, 255, 0.3),
+    rgba(168, 85, 247, 0.1) 50%,
+    transparent 70%);
+  filter: blur(40px);
+  animation: float-orb-1 18s ease-in-out infinite;
+}
+
+.bokeh-orb-2 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  background: radial-gradient(circle at 40% 30%,
+    rgba(232, 200, 255, 0.25),
+    rgba(192, 132, 252, 0.08) 50%,
+    transparent 70%);
+  filter: blur(50px);
+  animation: float-orb-2 22s ease-in-out infinite;
+}
+
+.bokeh-orb-3 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  right: 25%;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255, 220, 255, 0.2),
+    rgba(232, 121, 249, 0.06) 50%,
+    transparent 70%);
+  filter: blur(30px);
+  animation: float-orb-3 15s ease-in-out infinite;
+}
+
+.bokeh-orb-4 {
+  width: 400px;
+  height: 400px;
+  bottom: 5%;
+  left: 30%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(168, 85, 247, 0.08),
+    transparent 60%);
+  filter: blur(60px);
+  animation: float-orb-4 25s ease-in-out infinite;
+}
+
+.bokeh-orb-5 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 60%;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(255, 255, 255, 0.15),
+    rgba(200, 180, 255, 0.05) 50%,
+    transparent 70%);
+  filter: blur(20px);
+  animation: float-orb-5 12s ease-in-out infinite;
+}
+
+.bokeh-orb-6 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  left: 5%;
+  background: radial-gradient(circle at 40% 40%,
+    rgba(192, 132, 252, 0.12),
+    transparent 60%);
+  filter: blur(45px);
+  animation: float-orb-6 20s ease-in-out infinite;
+}
+
+.bokeh-orb-7 {
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  right: 35%;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255, 240, 255, 0.18),
+    rgba(232, 121, 249, 0.04) 50%,
+    transparent 70%);
+  filter: blur(25px);
+  animation: float-orb-7 16s ease-in-out infinite;
+}
+
+/* ─── Silk ripple overlay ─── */
+.silk-ripple {
+  background:
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(168, 85, 247, 0.03) 0deg,
+      transparent 30deg,
+      rgba(192, 132, 252, 0.02) 60deg,
+      transparent 90deg
+    );
+  animation: silk-rotate 60s linear infinite;
+}
+
+/* ─── Bokeh float keyframes — slow, organic, non-uniform ─── */
+@keyframes float-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  25% { transform: translate(30px, -40px) scale(1.05); opacity: 0.8; }
+  50% { transform: translate(-20px, -60px) scale(0.95); opacity: 0.5; }
+  75% { transform: translate(40px, -20px) scale(1.08); opacity: 0.7; }
+}
+
+@keyframes float-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  33% { transform: translate(-40px, 30px) scale(1.1); opacity: 0.7; }
+  66% { transform: translate(20px, -30px) scale(0.9); opacity: 0.4; }
+}
+
+@keyframes float-orb-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  50% { transform: translate(35px, 25px) scale(1.15); opacity: 0.5; }
+}
+
+@keyframes float-orb-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  40% { transform: translate(-30px, -20px) scale(1.05); opacity: 0.6; }
+  80% { transform: translate(20px, 10px) scale(0.98); opacity: 0.3; }
+}
+
+@keyframes float-orb-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  30% { transform: translate(20px, -30px) scale(1.2); opacity: 0.9; }
+  70% { transform: translate(-15px, 20px) scale(0.85); opacity: 0.4; }
+}
+
+@keyframes float-orb-6 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(25px, -35px) scale(1.08); opacity: 0.7; }
+}
+
+@keyframes float-orb-7 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  40% { transform: translate(-20px, -20px) scale(1.1); opacity: 0.5; }
+  80% { transform: translate(30px, 15px) scale(0.9); opacity: 0.7; }
+}
+
+@keyframes silk-rotate {
+  from { transform: rotate(0deg) scale(2); }
+  to { transform: rotate(360deg) scale(2); }
+}
+
+/* ─── Reduced motion: freeze all animation ─── */
+@media (prefers-reduced-motion: reduce) {
+  .bokeh-orb,
+  .silk-ripple {
+    animation: none !important;
+  }
+  video {
+    display: none;
+  }
 }
 
 @layer utilities {
