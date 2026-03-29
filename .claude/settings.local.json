@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.krcreativeagency.ie)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
