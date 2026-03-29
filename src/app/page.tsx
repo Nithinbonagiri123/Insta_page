@@ -61,13 +61,14 @@ const process = [
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative z-10 overflow-hidden">
+      {/* ───────── FIXED FULL-PAGE VIDEO BACKGROUND ───────── */}
+      <HeroBackground />
+
       <StickyCTA />
 
       {/* ───────── HERO ───────── */}
       <section className="relative min-h-screen flex items-center justify-center px-5">
-        {/* 3D Motion Background */}
-        <HeroBackground />
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           <motion.div
