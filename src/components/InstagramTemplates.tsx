@@ -60,7 +60,7 @@ Just high-quality, strategic content — created in ONE day, designed to convert
 
 export default function InstagramTemplates() {
   return (
-    <section id="templates" className="relative py-20 px-5 bg-[#09090b]">
+    <section id="templates" className="relative py-20 px-5 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"

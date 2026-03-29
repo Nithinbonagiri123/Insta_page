@@ -176,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* ───────── AS SEEN ON ───────── */}
-      <section className="relative py-16 bg-[#09090b]">
+      <section className="relative py-16 bg-transparent">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* ───────── PORTFOLIO / WORK ───────── */}
-      <section id="work" className="relative py-20 px-5 bg-[#09090b]">
+      <section id="work" className="relative py-20 px-5 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -241,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* ───────── HOW IT WORKS ───────── */}
-      <section className="relative py-20 px-5 bg-[#09090b]">
+      <section className="relative py-20 px-5 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
@@ -295,7 +295,7 @@ export default function Home() {
       <ContentDays />
 
       {/* ───────── PRICING ───────── */}
-      <section id="pricing" className="relative py-20 px-5 bg-[#09090b]">
+      <section id="pricing" className="relative py-20 px-5 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -335,7 +335,7 @@ export default function Home() {
       <InstagramTemplates />
 
       {/* ───────── TESTIMONIALS ───────── */}
-      <section className="relative py-20 px-5 bg-[#09090b]">
+      <section className="relative py-20 px-5 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
@@ -364,7 +364,7 @@ export default function Home() {
       </section>
 
       {/* ───────── CONTACT / CTA ───────── */}
-      <section id="contact" className="relative py-20 px-5 bg-[#09090b]">
+      <section id="contact" className="relative py-20 px-5 bg-transparent">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -414,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* ───────── FOOTER ───────── */}
-      <footer className="relative py-10 px-5 border-t border-white/5 bg-[#09090b]">
+      <footer className="relative py-10 px-5 border-t border-white/5 bg-transparent">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-zinc-600 text-sm">
             &copy; 2026 PS Edits. All rights reserved.

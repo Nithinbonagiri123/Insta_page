@@ -23,7 +23,7 @@ export default function HeroBackground() {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      {/* ── Video Background — covers entire page ── */}
+      {/* ── Video ── */}
       <video
         ref={videoRef}
         autoPlay
@@ -31,13 +31,13 @@ export default function HeroBackground() {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
         style={{ zIndex: 1 }}
       >
         <source src="/hero-reel.mp4" type="video/mp4" />
       </video>
 
-      {/* ── Bokeh fallback (shows if video fails to load) ── */}
+      {/* ── Bokeh fallback ── */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
         <div className="bokeh-field absolute inset-0">
           <div className="bokeh-orb bokeh-orb-1" />
@@ -51,13 +51,9 @@ export default function HeroBackground() {
         <div className="absolute inset-0 silk-ripple opacity-20" />
       </div>
 
-      {/* ── Dark overlay for text readability across all sections ── */}
+      {/* ── Single consistent dark overlay — same darkness everywhere ── */}
       <div
-        className="absolute inset-0 bg-[#09090b]/80"
-        style={{ zIndex: 2 }}
-      />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(168,85,247,0.1),transparent_55%)]"
+        className="absolute inset-0 bg-[#09090b]/65"
         style={{ zIndex: 2 }}
       />
     </div>

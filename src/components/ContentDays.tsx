@@ -51,7 +51,7 @@ const benefits = [
 
 export default function ContentDays() {
   return (
-    <section id="content-days" className="relative py-20 px-5 bg-[#09090b]">
+    <section id="content-days" className="relative py-20 px-5 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
