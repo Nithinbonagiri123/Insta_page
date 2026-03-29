@@ -61,7 +61,7 @@ const process = [
 
 export default function Home() {
   return (
-    <main className="relative z-10 overflow-hidden">
+    <main className="relative z-10 overflow-hidden text-white">
       {/* ───────── FIXED FULL-PAGE VIDEO BACKGROUND ───────── */}
       <HeroBackground />
 
@@ -104,7 +104,7 @@ export default function Home() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-zinc-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto text-balance"
+              className="text-zinc-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto text-balance"
             >
               Professional video editing for creators who want cinematic quality
               without the agency price tag.{" "}
@@ -176,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* ───────── AS SEEN ON ───────── */}
-      <section className="py-16">
+      <section className="relative py-16 bg-[#09090b]">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -189,12 +189,12 @@ export default function Home() {
       </section>
 
       {/* ───────── PORTFOLIO / WORK ───────── */}
-      <section id="work" className="py-20 px-5">
+      <section id="work" className="relative py-20 px-5 bg-[#09090b]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-16"
           >
             <motion.p
@@ -241,12 +241,12 @@ export default function Home() {
       </section>
 
       {/* ───────── HOW IT WORKS ───────── */}
-      <section className="py-20 px-5">
+      <section className="relative py-20 px-5 bg-[#09090b]">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-16"
           >
             <motion.p
@@ -295,12 +295,12 @@ export default function Home() {
       <ContentDays />
 
       {/* ───────── PRICING ───────── */}
-      <section id="pricing" className="py-20 px-5">
+      <section id="pricing" className="relative py-20 px-5 bg-[#09090b]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-16"
           >
             <motion.p
@@ -320,7 +320,7 @@ export default function Home() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-zinc-400 mt-4 max-w-md mx-auto"
+              className="text-zinc-300 mt-4 max-w-md mx-auto"
             >
               Transparent pricing. No hidden fees. Just great edits at a price
               that makes sense.
@@ -335,12 +335,12 @@ export default function Home() {
       <InstagramTemplates />
 
       {/* ───────── TESTIMONIALS ───────── */}
-      <section className="py-20 px-5">
+      <section className="relative py-20 px-5 bg-[#09090b]">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-16"
           >
             <motion.p
@@ -364,7 +364,7 @@ export default function Home() {
       </section>
 
       {/* ───────── CONTACT / CTA ───────── */}
-      <section id="contact" className="py-20 px-5">
+      <section id="contact" className="relative py-20 px-5 bg-[#09090b]">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -381,7 +381,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-3">
                 Ready to <span className="text-gradient">Level Up</span>?
               </h2>
-              <p className="text-zinc-400 mb-8 max-w-md mx-auto">
+              <p className="text-zinc-300 mb-8 max-w-md mx-auto">
                 Drop me a DM or tap the button below. Let&apos;s make your
                 content unforgettable.
               </p>
@@ -414,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* ───────── FOOTER ───────── */}
-      <footer className="py-10 px-5 border-t border-white/5">
+      <footer className="relative py-10 px-5 border-t border-white/5 bg-[#09090b]">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-zinc-600 text-sm">
             &copy; 2026 PS Edits. All rights reserved.

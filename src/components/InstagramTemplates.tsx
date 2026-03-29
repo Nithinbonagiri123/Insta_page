@@ -60,12 +60,12 @@ Just high-quality, strategic content — created in ONE day, designed to convert
 
 export default function InstagramTemplates() {
   return (
-    <section id="templates" className="py-20 px-5">
+    <section id="templates" className="relative py-20 px-5 bg-[#09090b]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mb-16"
         >
           <motion.p
@@ -86,7 +86,7 @@ export default function InstagramTemplates() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base md:text-lg"
+            className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base md:text-lg"
           >
             Steal these scroll-stopping Instagram caption frameworks. Proven to
             engage, connect, and convert your audience.

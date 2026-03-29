@@ -259,6 +259,25 @@ body {
   }
 }
 
+/* ─── Bright headings over video background ─── */
+h1, h2, h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+p, span, li {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure gradient text stays gradient (override the white) */
+.text-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(168, 85, 247, 0.6));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

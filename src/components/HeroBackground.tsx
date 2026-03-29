@@ -22,7 +22,7 @@ export default function HeroBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* ── Video Background — covers entire page ── */}
       <video
         ref={videoRef}
@@ -53,7 +53,7 @@ export default function HeroBackground() {
 
       {/* ── Dark overlay for text readability across all sections ── */}
       <div
-        className="absolute inset-0 bg-[#09090b]/60"
+        className="absolute inset-0 bg-[#09090b]/80"
         style={{ zIndex: 2 }}
       />
       <div

@@ -51,12 +51,12 @@ const benefits = [
 
 export default function ContentDays() {
   return (
-    <section id="content-days" className="py-20 px-5">
+    <section id="content-days" className="relative py-20 px-5 bg-[#09090b]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mb-16"
         >
           <motion.p
@@ -76,7 +76,7 @@ export default function ContentDays() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base md:text-lg"
+            className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base md:text-lg"
           >
             We show up, shoot, and edit — all in one day. You walk away with a
             month&apos;s worth of professional content ready to post.
@@ -97,7 +97,7 @@ export default function ContentDays() {
                 <benefit.icon className="w-6 h-6 text-accent-light" />
               </div>
               <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">
+              <p className="text-zinc-300 text-sm leading-relaxed">
                 {benefit.desc}
               </p>
             </motion.div>
