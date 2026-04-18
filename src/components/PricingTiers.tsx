@@ -22,7 +22,8 @@ const tiers = [
     name: "Starter",
     price: "€150",
     period: "/5 videos",
-    description: "Perfect for creators just getting started or testing the waters.",
+    description:
+      "For consistent drops when you want cinematic polish without building an in-house edit bench.",
     badge: null,
     features: [
       { icon: Film, text: "5 Professionally Edited Videos" },
@@ -57,7 +58,8 @@ const tiers = [
     name: "VIP",
     price: "€650",
     period: "/20 videos",
-    description: "The full package for serious brands ready to dominate their feed.",
+    description:
+      "For brands scaling volume while keeping voice, grade, and deadlines under one roof.",
     badge: "BEST VALUE",
     features: [
       { icon: Film, text: "20 Professionally Edited Videos" },

@@ -19,8 +19,17 @@ import Testimonials from "@/components/Testimonials";
 import LogoMarquee from "@/components/LogoMarquee";
 import StickyCTA from "@/components/StickyCTA";
 import ContentDays from "@/components/ContentDays";
-import InstagramTemplates from "@/components/InstagramTemplates";
+import LeadMagnet from "@/components/LeadMagnet";
+import VibeSelector from "@/components/VibeSelector";
+import BrandTrust from "@/components/BrandTrust";
 import HeroBackground from "@/components/HeroBackground";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import FAQ from "@/components/FAQ";
+import ComparisonTable from "@/components/ComparisonTable";
+import CaseStudies from "@/components/CaseStudies";
+import InstagramFeed from "@/components/InstagramFeed";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
+import PlatformResults from "@/components/PlatformResults";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -36,27 +45,36 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: "500+", label: "Videos Delivered" },
-  { value: "48h", label: "Avg. Turnaround" },
-  { value: "100%", label: "Client Satisfaction" },
+  { value: "500+", label: "Videos delivered" },
+  { value: "48h", label: "Median turnaround" },
+  { value: "Voice-first", label: "Briefing workflow" },
 ];
 
 const process = [
   {
     icon: Send,
-    title: "Send Your Footage",
-    desc: "Upload your raw clips via our secure link. Any format, any length.",
+    title: "Brief & upload",
+    desc: "Voice notes, reference reels, and raws via a secure link—so the first cut sounds like you.",
   },
   {
     icon: Wand2,
-    title: "We Work Our Magic",
-    desc: "Professional editing, color grading, SFX, and motion graphics.",
+    title: "Cut, grade, motion",
+    desc: "Retention-first pacing, cinematic grade, SFX, and supers—scoped to your package and deadline.",
   },
   {
     icon: Film,
-    title: "Get Stunning Videos",
-    desc: "Receive your polished videos within 48 hours. Ready to post.",
+    title: "Revise & deliver",
+    desc: "Structured revision rounds, then delivery in native aspect ratios—ready to schedule, not re-edit.",
   },
+];
+
+const portfolioPieces = [
+  { title: "Product launch / hook test", subtitle: "3 hooks · one offer" },
+  { title: "Founder story / docu cut", subtitle: "Long hold · trust build" },
+  { title: "Personal brand / luxury pace", subtitle: "Slow push · voice-led" },
+  { title: "Evergreen edu / Shorts", subtitle: "Pattern break · clarity" },
+  { title: "Event day / same-day turnaround", subtitle: "Momentum content" },
+  { title: "Content Day batch", subtitle: "30+ clips · multi-platform" },
 ];
 
 export default function Home() {
@@ -86,7 +104,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
-              Available for New Projects
+              Available for new projects
             </motion.div>
 
             {/* Heading */}
@@ -95,10 +113,19 @@ export default function Home() {
               custom={1}
               className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight"
             >
-              Edits That Make
+              Reels that hold attention.
               <br />
-              <span className="text-gradient">Your Content Pop</span>
+              <span className="text-gradient">Feeds that compound.</span>
             </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              custom={1.5}
+              className="text-zinc-400 text-sm sm:text-base max-w-lg mx-auto -mt-2 text-balance font-medium"
+            >
+              Cinematic editing + Content Days for creators who treat content
+              like an asset—not a chore.
+            </motion.p>
 
             {/* Sub */}
             <motion.p
@@ -106,10 +133,13 @@ export default function Home() {
               custom={2}
               className="text-zinc-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto text-balance"
             >
-              Professional video editing for creators who want cinematic quality
-              without the agency price tag.{" "}
-              <span className="text-white font-semibold">
-                5 videos. €150. Done.
+              Stop trading your calendar for the algorithm. PS Edits turns raw
+              footage into retention-first cuts—paced for watch time, styled
+              for authority, and delivered on a timeline that respects how you
+              work.{" "}
+              <span className="text-white font-semibold block sm:inline mt-2 sm:mt-0">
+                From €150 / 5 edits—ship a week of high-trust posts without a
+                full-time editor.
               </span>
             </motion.p>
 
@@ -126,7 +156,7 @@ export default function Home() {
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent-dark via-accent to-accent-light text-white font-bold text-lg shadow-lg shadow-accent/25 min-h-[56px]"
               >
                 <Sparkles className="w-5 h-5" />
-                See Packages
+                View packages
               </motion.a>
               <motion.a
                 href="#work"
@@ -135,7 +165,7 @@ export default function Home() {
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl glass text-white font-semibold text-lg min-h-[56px] hover:bg-white/10 transition-colors"
               >
                 <Play className="w-5 h-5" />
-                Watch My Work
+                See the work
               </motion.a>
             </motion.div>
 
@@ -183,7 +213,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center text-zinc-600 text-xs uppercase tracking-[0.3em] mb-6"
         >
-          Trusted by creators on
+          Native formats we cut for
         </motion.p>
         <LogoMarquee />
       </section>
@@ -213,15 +243,14 @@ export default function Home() {
             </motion.h2>
           </motion.div>
 
-          {/* Video grid placeholders */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {portfolioPieces.map((piece, idx) => (
               <motion.div
-                key={item}
+                key={piece.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: item * 0.08 }}
+                transition={{ delay: (idx + 1) * 0.08 }}
                 whileHover={{ scale: 1.02, y: -4 }}
                 className="group relative aspect-[9/16] sm:aspect-video rounded-2xl overflow-hidden glass cursor-pointer"
               >
@@ -231,9 +260,12 @@ export default function Home() {
                     <Play className="w-6 h-6 text-white ml-0.5" />
                   </div>
                 </div>
-                <p className="absolute bottom-4 left-4 text-sm font-medium text-zinc-400">
-                  Project {item}
-                </p>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-sm font-semibold text-white leading-tight">
+                    {piece.title}
+                  </p>
+                  <p className="text-xs text-zinc-500 mt-0.5">{piece.subtitle}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -254,7 +286,7 @@ export default function Home() {
               custom={0}
               className="text-accent-light text-sm font-semibold uppercase tracking-widest mb-3"
             >
-              Simple Process
+              Process
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -291,8 +323,24 @@ export default function Home() {
         </div>
       </section>
 
+      <BrandTrust />
+
+      {/* ───────── BEFORE / AFTER SLIDER ───────── */}
+      <BeforeAfterSlider />
+
+      {/* ───────── CASE STUDIES ───────── */}
+      <CaseStudies />
+
+      {/* ───────── PLATFORM RESULTS ───────── */}
+      <PlatformResults />
+
       {/* ───────── CONTENT DAYS ───────── */}
       <ContentDays />
+
+      <VibeSelector />
+
+      {/* ───────── COMPARISON TABLE ───────── */}
+      <ComparisonTable />
 
       {/* ───────── PRICING ───────── */}
       <section id="pricing" className="relative py-20 px-5 bg-transparent">
@@ -320,10 +368,10 @@ export default function Home() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-zinc-300 mt-4 max-w-md mx-auto"
+              className="text-zinc-300 mt-4 max-w-lg mx-auto"
             >
-              Transparent pricing. No hidden fees. Just great edits at a price
-              that makes sense.
+              Transparent scopes and delivery windows—so you know what ships,
+              when, and how revisions work before you book.
             </motion.p>
           </motion.div>
 
@@ -331,8 +379,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── INSTAGRAM TEMPLATES ───────── */}
-      <InstagramTemplates />
+      <LeadMagnet />
+
+      {/* ───────── INSTAGRAM FEED ───────── */}
+      <InstagramFeed />
 
       {/* ───────── TESTIMONIALS ───────── */}
       <section className="relative py-20 px-5 bg-transparent">
@@ -355,13 +405,19 @@ export default function Home() {
               custom={1}
               className="text-3xl md:text-5xl font-bold"
             >
-              Client <span className="text-gradient">Love</span>
+              Client <span className="text-gradient">results</span>
             </motion.h2>
           </motion.div>
 
           <Testimonials />
         </div>
       </section>
+
+      {/* ───────── CALENDLY BOOKING ───────── */}
+      <CalendlyEmbed />
+
+      {/* ───────── FAQ ───────── */}
+      <FAQ />
 
       {/* ───────── CONTACT / CTA ───────── */}
       <section id="contact" className="relative py-20 px-5 bg-transparent">
@@ -379,11 +435,11 @@ export default function Home() {
             <div className="relative z-10">
               <MessageCircle className="w-10 h-10 text-accent mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold mb-3">
-                Ready to <span className="text-gradient">Level Up</span>?
+                Ready to <span className="text-gradient">compound</span>?
               </h2>
               <p className="text-zinc-300 mb-8 max-w-md mx-auto">
-                Drop me a DM or tap the button below. Let&apos;s make your
-                content unforgettable.
+                Tell us your next drop, your voice constraints, and your
+                deadline—we&apos;ll reply with a clear scope and start date.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -399,7 +455,7 @@ export default function Home() {
                   DM on Instagram
                 </motion.a>
                 <motion.a
-                  href="mailto:hello@psedits.com"
+                  href="mailto:Poonamyt0821@gmail.com"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl glass text-white font-semibold text-lg min-h-[56px] hover:bg-white/10 transition-colors"

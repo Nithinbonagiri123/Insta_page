@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, Video, Clapperboard, Clock, Sparkles, Users } from "lucide-react";
+import {
+  Camera,
+  Video,
+  Clapperboard,
+  Clock,
+  Sparkles,
+  Users,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -19,33 +26,33 @@ const fadeUp = {
 const benefits = [
   {
     icon: Camera,
-    title: "Professional Shooting",
-    desc: "We come to you with pro gear — lighting, audio, and cameras. You just show up and be yourself.",
+    title: "On-brand capture, zero performance anxiety",
+    desc: "Direction and setup so you look like you on your best day—not a generic “shoot day.”",
   },
   {
     icon: Clapperboard,
-    title: "Same-Day Editing",
-    desc: "Your footage gets edited on the spot. Walk away with ready-to-post content by end of day.",
+    title: "Same-day assembly, zero backlog",
+    desc: "Momentum beats motivation. Leave with finished cuts, not a hard drive of guilt.",
   },
   {
     icon: Video,
-    title: "Multi-Platform Content",
-    desc: "Reels, TikToks, YouTube Shorts, Stories — we shoot and format for every platform you need.",
+    title: "Native formats, not lazy crops",
+    desc: "Hooks and pacing tuned per surface so feeds get what they want without diluting your brand.",
   },
   {
     icon: Clock,
-    title: "One Day, One Month of Content",
-    desc: "A single Content Day gives you enough scroll-stopping content to fill your feed for weeks.",
+    title: "Cadence you can actually sustain",
+    desc: "Enough strong posts to protect reach while you run the business behind the brand.",
   },
   {
     icon: Users,
-    title: "For Any Brand",
-    desc: "Whether you're a startup, influencer, creator, or established business — we tailor the day to you.",
+    title: "Built for personal brands with a POV",
+    desc: "We translate your POV into watchable structure—no template-creator energy.",
   },
   {
     icon: Sparkles,
-    title: "Creative Direction Included",
-    desc: "Not sure what to film? We plan the concepts, shots, and transitions before the day begins.",
+    title: "Shot plan before we roll",
+    desc: "Angles, beats, and transitions mapped to trends that fit your niche—not random viral noise.",
   },
 ];
 
@@ -71,22 +78,25 @@ export default function ContentDays() {
             custom={1}
             className="text-3xl md:text-5xl font-bold"
           >
-            One Day. <span className="text-gradient">Endless Content.</span>
+            One day in.{" "}
+            <span className="text-gradient">A month of momentum out.</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             custom={2}
             className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base md:text-lg"
           >
-            We show up, shoot, and edit — all in one day. You walk away with a
-            month&apos;s worth of professional content ready to post.
+            A single intensive day built for consistency and compounding: we
+            handle capture and cut so you leave with platform-native assets—not
+            footage to figure out later. You stay in your zone of genius; we
+            protect your voice, visual standard, and posting cadence.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, i) => (
             <motion.div
-              key={i}
+              key={benefit.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -104,7 +114,6 @@ export default function ContentDays() {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +128,7 @@ export default function ContentDays() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent-dark via-accent to-accent-light text-white font-bold text-lg shadow-lg shadow-accent/25"
           >
             <Camera className="w-5 h-5" />
-            Book Your Content Day
+            Book a Content Day
           </motion.a>
         </motion.div>
       </div>

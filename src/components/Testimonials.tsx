@@ -7,30 +7,30 @@ import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Sarah Chen",
-    handle: "@sarahcreates",
+    handle: "@sarahcreates · Lifestyle",
     avatar: "SC",
-    text: "My engagement literally doubled after switching to these edits. The transitions and color grading are *chef's kiss*. Worth every single cent.",
+    text: "Watch time and saves are up materially after we tightened hooks and pacing. The grade finally matches how premium the brand actually is.",
     rating: 5,
   },
   {
     name: "Marcus Rivera",
-    handle: "@marcusfit",
+    handle: "@marcusfit · Fitness",
     avatar: "MR",
-    text: "I was spending 8 hours editing each video myself. Now I just film, send, and get back cinematic content in 2 days. Game changer for my fitness brand.",
+    text: "I was losing half a day to the timeline per drop. Now I film, hand off, and get back cuts that feel native to Shorts and Reels—same voice, less noise.",
     rating: 5,
   },
   {
     name: "Aisha Patel",
-    handle: "@aishatravel",
+    handle: "@aishatravel · Travel",
     avatar: "AP",
-    text: "The quality you get for €150 for FIVE videos is insane. I've paid triple this for a single video from agencies. This is my secret weapon.",
+    text: "The five-pack is structured like a serious ops partner—brief, cut, revision, delivery. Quality I used to chase from bigger shops, without the runway.",
     rating: 5,
   },
   {
     name: "Jake Morrison",
-    handle: "@jakethemaker",
+    handle: "@jakethemaker · Maker / edu",
     avatar: "JM",
-    text: "Finally found an editor who actually understands the YouTube/TikTok aesthetic. The pacing, the hooks, the energy — everything is dialed in perfectly.",
+    text: "Finally an editor who reads retention, not just transitions. Hooks land in the first second; the rest of the reel earns the follow.",
     rating: 5,
   },
 ];
@@ -75,7 +75,6 @@ export default function Testimonials() {
             exit="exit"
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            {/* Stars */}
             <div className="flex gap-1 mb-4">
               {Array.from({ length: testimonials[current].rating }).map(
                 (_, i) => (
@@ -87,12 +86,10 @@ export default function Testimonials() {
               )}
             </div>
 
-            {/* Quote */}
             <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-6">
               &ldquo;{testimonials[current].text}&rdquo;
             </p>
 
-            {/* Author */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-white text-sm font-bold">
                 {testimonials[current].avatar}
@@ -110,9 +107,9 @@ export default function Testimonials() {
         </AnimatePresence>
       </div>
 
-      {/* Navigation */}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
+          type="button"
           onClick={() => paginate(-1)}
           className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
           aria-label="Previous testimonial"
@@ -123,6 +120,7 @@ export default function Testimonials() {
         <div className="flex gap-2">
           {testimonials.map((_, i) => (
             <button
+              type="button"
               key={i}
               onClick={() => {
                 setDirection(i > current ? 1 : -1);
@@ -139,6 +137,7 @@ export default function Testimonials() {
         </div>
 
         <button
+          type="button"
           onClick={() => paginate(1)}
           className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
           aria-label="Next testimonial"
